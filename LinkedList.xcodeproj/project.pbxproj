@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3B3511D219B6F1720025C896 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B3511D119B6F1720025C896 /* main.c */; };
 		3B3511D419B6F1720025C896 /* LinkedList.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3B3511D319B6F1720025C896 /* LinkedList.1 */; };
+		3B3511DB19B6F1930025C896 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 3B3511DA19B6F1930025C896 /* LinkedList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,7 @@
 		3B3511CE19B6F1720025C896 /* LinkedList */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LinkedList; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B3511D119B6F1720025C896 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		3B3511D319B6F1720025C896 /* LinkedList.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = LinkedList.1; sourceTree = "<group>"; };
+		3B3511DA19B6F1930025C896 /* LinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				3B3511D119B6F1720025C896 /* main.c */,
 				3B3511D319B6F1720025C896 /* LinkedList.1 */,
+				3B3511DA19B6F1930025C896 /* LinkedList.c */,
 			);
 			path = LinkedList;
 			sourceTree = "<group>";
@@ -117,6 +120,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B3511DB19B6F1930025C896 /* LinkedList.c in Sources */,
 				3B3511D219B6F1720025C896 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
