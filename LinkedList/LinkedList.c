@@ -15,7 +15,7 @@ struct cell{
 };
 
 void readInputFromFile();
-void createlist(struct cell*);
+struct cell* createlist(int);
 int member(int, struct cell*);
 struct cell* delete(int, struct cell*);
 int last(struct cell*);
@@ -27,7 +27,9 @@ void display(struct cell*);
 int main()
 {
     
-    
+    struct cell* head=createlist(5);
+    printf("%d\n",member(7, head));
+    return 0;
     
 }
 void readInputFromFile()
@@ -52,13 +54,14 @@ void readInputFromFile()
                    
         }
 }
-void createlist(struct cell* p)
+struct cell* createlist(int data)
 {
     struct cell* head;
     
     head=(struct cell*) malloc(sizeof(struct cell));
-    head->data=5;
+    head->data=data;
     head->next=NULL;
+    return head;
     
 }
 int member(int n, struct cell* p)
