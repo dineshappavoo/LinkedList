@@ -14,8 +14,7 @@ struct cell{
     struct cell* next;
 };
 
-void readInputFromFile();
-struct cell* createlist(int);
+void createlist();
 int member(int, struct cell*);
 struct cell* delete(int, struct cell*);
 int last(struct cell*);
@@ -26,42 +25,59 @@ void display(struct cell*);
 
 int main()
 {
-    
-    struct cell* head=createlist(5);
+ 
+    createlist();
+    struct cell* head=NULL;
     printf("%d\n",member(7, head));
     return 0;
     
 }
-void readInputFromFile()
+void createlist()
 {
     FILE *file_ptr;
     int cellValue;
-    char fileName[25];
+    //char fileName[25];
     
-    printf("Enter the file name");
-    gets(fileName);
+    //printf("Enter the file name");
+    //gets(fileName);
     
-    file_ptr=fopen(fileName, "r");
+    file_ptr=fopen("/Users/Dany/Documents/C_WORKSPACE/LinkedList/input.txt", "r");
     
     if(file_ptr==NULL)
     {
         printf("Error opening the file\n");
         exit(EXIT_FAILURE);
     }
-               
-    while((fscanf(file_ptr,"%d", &cellValue) == 1 )){
-                   
-                   
-        }
-}
-struct cell* createlist(int data)
-{
-    struct cell* head;
     
-    head=(struct cell*) malloc(sizeof(struct cell));
-    head->data=data;
-    head->next=NULL;
-    return head;
+    struct cell* head=NULL;
+
+    while((fscanf(file_ptr,"%d", &cellValue) == 1 )){
+        if(head==NULL)
+        {
+        head=(struct cell*) malloc(sizeof(struct cell));
+        head->data=cellValue;
+        head->next=NULL;
+        }else{
+            
+            if(cellValue==-1)
+            {
+                printf("Test");
+                printf("%d\n",member(7, head));
+                printf("%d\n",last(head));
+
+                head=NULL;
+            }else{
+            struct cell* newNode=(struct cell*) malloc(sizeof(struct cell));
+            newNode->data=cellValue;
+            newNode->next=NULL;
+            while (head->next!=NULL) {
+                head=head->next;
+            }
+            head->next=newNode;
+        }
+
+        }
+    }
     
 }
 int member(int n, struct cell* p)
@@ -86,19 +102,18 @@ struct cell*  delete(int n, struct cell* p)
             {
                 p=NULL;
             }
-            
         }
     }
     return p;
 }
 int last(struct cell* p)
 {
-    while (p!=NULL) {
-        if (p->next==NULL) {
-            return p->data;
-        }
+    if(p==NULL)
+        return -1;
+    while (p->next!=NULL) {
+        p=p->next;
     }
-    return -1;
+    return p->data;
 }
 struct cell* append(struct cell* p, struct cell* q)
 {

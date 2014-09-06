@@ -3,10 +3,6 @@ LinkedList
 
 LinkedList non recursive implementation in c.
 
-##Install
-
-This project has the implementation of LinkedList in C. 
-
 ##Functionalities
   
 int member(int n, cell *p): which takes two arguments: a number n and a pointer p
