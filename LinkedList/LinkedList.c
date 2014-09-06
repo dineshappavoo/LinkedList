@@ -51,7 +51,14 @@ void createlist()
     
     struct cell* head=NULL;
 
-    while((fscanf(file_ptr,"%d", &cellValue) == 1 )){
+    printf("Test 1\n");
+
+    if(NULL == file_ptr)
+        printf("File not available\n");
+    while(fscanf(file_ptr,"%d", &cellValue)>0){
+        printf("Test 2\n");
+
+        printf("%d\n",cellValue);
         if(head==NULL)
         {
         head=(struct cell*) malloc(sizeof(struct cell));
@@ -75,9 +82,10 @@ void createlist()
             }
             head->next=newNode;
         }
-
         }
     }
+    fclose(file_ptr);
+
     
 }
 int member(int n, struct cell* p)
