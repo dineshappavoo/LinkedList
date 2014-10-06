@@ -8,7 +8,7 @@ LinkedList recursive and non recursive implementation in c.
 Function Name | Definition
 ------------ | -------------
 int member(int n, cell *p): |It takes two arguments: a number n and a pointer p
-to a list; it returns 1 if the number is found in the list, 0 otherwise.
+to a list and it returns 1 if the number is found in the list, 0 otherwise.
 
 (cell *) delete(int n, cell *p): |It takes two arguments: a number n and a
 pointer p to a list. It returns a list that is obtained by deleting the number n from the list
